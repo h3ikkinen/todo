@@ -1,0 +1,254 @@
+$black: #262626;
+$dark-grey: #404040;
+$grey: #737373;
+$white: #F2F2F2;
+$light-grey: #BFBFBF;
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { 
+        color: $white;
+        font-size: 16px;
+     }
+    &:-moz-placeholder           { 
+        color: $white;
+        font-size: 16px;
+     }
+    &::-moz-placeholder          { 
+        color: $white;
+        font-size: 16px;
+     }
+    &:-ms-input-placeholder      { 
+        color: $white;
+        font-size: 16px;
+    }  
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+.main { 
+    background-color: $black;
+    height: 100vh;
+    width: 100vw;
+    &__content {
+        margin: 0 auto;
+        width: 90vw;
+        .main__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 10vh;
+            width: 90vw;
+            .logo {
+                height: 60px;
+                border: 2px solid #BFBFBF;
+                border-radius: 15px;
+                color: $white;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                width: 320px;
+                justify-content: center;
+                span {
+                    color: #92FFF3;
+                }
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    transition: .5s ease-in;
+                }
+            }
+            button {
+                font-size: 30px;
+                color: $white;
+                background-color: $black;
+                border: solid 2px $light-grey;
+                height: 60px;
+                width: 200px;
+                cursor: pointer;
+                border-radius: 15px;
+                font-weight: 300;
+                transition: .6s all ease-out;
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                    border: solid 2px $white;
+                }
+            }
+        }
+        .tasks {
+            min-height: 10vh;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            h2 {
+                color: $white;
+                letter-spacing: 0.3em;
+                font-size: 35px;
+                margin: 0 auto;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            &__content {
+                margin: 0 auto;
+                margin-top: 10px;
+                min-height: 80vh;
+                width: 95%;
+                border: 2px solid #92FFF3;
+                border-radius: 10px;
+                &-in {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: inherit;
+                    padding: 0;
+                    margin: 0 auto;
+                }
+
+                .task {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px;
+                    min-width: 270px;
+                    min-height: 80px;
+                    margin: 10px;
+                    background-color: #92FFF3;
+                    border-radius: 10px;
+                    .task__remove {
+                        cursor: pointer;
+                        margin: 3px;
+                        i {
+                            font-size: 35px;
+                            color: $black;
+                        }
+                    }
+                    .task__txt {
+                        font-style: 16px;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// дополнительные классы
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+//popup 
+.popup {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .5);
+    transition: .3s all;
+    &__overlay {
+        cursor: pointer;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .popap__content {
+        min-height: 55vh;
+        width: 30vw;
+        background-color: #C9E9E3;
+        border: 2px solid  $black;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: default;
+        padding: 10px;
+        h2 {
+            font-size: 35px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2%;
+            align-items: center;
+            input {
+                font-size: 16px;
+                margin-top: 20px;
+                background-color: $black;
+                color: $white;
+                @include placeholder;
+                border: none;
+                height: 60px;
+                width: 400px;
+                border-radius: 5px;
+                &[type="text"] {
+                    padding: 10px;
+                }
+                &[type="submit"] {
+                    cursor: pointer;
+                    height: 50px;
+                    width: 200px;
+                    transition: .5s;
+                    &:hover {
+                        color: $black;
+                        background-color: $white;
+                        border: 2px solid $black;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            .check {
+                height: 60px;
+                width: 400px;
+                display: flex;
+                align-items: center;
+                background-color: $black;
+                margin-top: 20px;
+                padding: 10px;
+                input {
+                    height: 25px;
+                    width: 25px;
+                    margin: 0;
+                    cursor: pointer;
+                    color: $white;
+                    background-color: $black;
+                    border: solid 1px $white;
+                }
+                .important_tasks {
+                    font-size: 18px;
+                    color: $white;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    &__top {
+        display: flex;
+        width: inherit;
+        justify-content: flex-end;
+        .popup__close {
+            margin: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+// анимации 

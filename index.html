@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="scss/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="main__content">
+            <div class="main__header">
+                <div class="logo"> 
+                    <div>
+                        <span>To Do</span> by <a href="#">h3ikkinen</a> 
+                    </div> 
+                </div>
+                <button class="popap__open">Add Task</button>
+            </div>
+            <div class="tasks">
+                <h2>tasks:</h2>
+                <div class="tasks__content">
+                    <div class="tasks__content-in">
+                        <div class="task">
+                            <div class="task__txt"><span class="txt"> rreettraetareafadsgadsfsd</span></div>
+                            <div class="task__remove"><i class="far fa-trash-alt"></i></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup hide">
+        <div class="popup__overlay">
+            <div class="popap__content">
+                <div class="popup__top">
+                    <span class="popup__close">✘</span>
+                </div>
+                <h2>add task:</h2>
+                <form class="addTask" action="#">
+                    <input class="popup__inp-txt" type="text" placeholder="Enter the text of the task">
+                    <input class="popup__inp-subtxt" type="text" placeholder="Enter a list of subtasks (separated by commas)">
+                    <!-- <div class="check"><span class="important_tasks">Add it to the list of main tasks?</span> <input type="checkbox"></div> -->
+                    <input class="popup__inp-btn" type="submit" value="Add task">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
