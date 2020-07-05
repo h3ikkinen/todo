@@ -43,10 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     // task add and remove 
-    const tasks = [],
-          tasksShell = document.querySelector('.tasks__content-in'),
+    let tasks = [];
+    const tasksShell = document.querySelector('.tasks__content-in'),
           formAddTask = document.querySelector('.addTask');
-
+    
+    tasks = JSON.parse(localStorage.getItem('tasks'));
     formAddTask.addEventListener('submit', (e) => {
         e.preventDefault();
         let newTask = document.querySelector('.popup__inp-txt').value;
